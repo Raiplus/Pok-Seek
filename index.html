@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PokéSeek</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    
+<body>
+    <header>
+        <div class="logo">PokéSeek</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Update Logs</a></li>
+                <li><a href="#">Contact Me</a></li>
+                <li><a href="#" class="leaderboard-header-icon" >Leaderboard</a></li>
+            </ul>
+        </nav>
+        <div class="header-right">
+            <div class="high-score">High Score: 0</div>
+            <a href="#" class="user-icon" title="Profile" style="display: none;">U</a>
+        </div>
+    </header>
+    
+    <main>
+        <div class="game-container">
+            <button class="start-button">Start Game</button>
+            <div class="pokemon-card">
+                <div class="pokemon-image"></div>
+                <div class="hint">Click "Start Game" to begin!</div>
+                <div class="options">
+                    <button class="option">Pokemon Name 1</button>
+                    <button class="option">Pokemon Name 2</button>
+                    <button class="option">Pokemon Name 3</button>
+                    <button class="option">Pokemon Name 4</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="side-panel">
+            <div class="current-score-panel">
+                <div class="score-title">Current Score</div>
+                <div class="score-value">0</div>
+            </div>
+            
+            <div class="leaderboard-panel">
+                <h3 class="leaderboard-title">Leaderboard</h3>
+                <ul class="leaderboard-list">
+                    <li class="leaderboard-item">
+                        <span class="leaderboard-name">Trainer Ash</span>
+                        <span class="leaderboard-score">850</span>
+                    </li>
+                    <li class="leaderboard-item">
+                        <span class="leaderboard-name">Trainer Misty</span>
+                        <span class="leaderboard-score">720</span>
+                    </li>
+                    <li class="leaderboard-item">
+                        <span class="leaderboard-name">Trainer Brock</span>
+                        <span class="leaderboard-score">680</span>
+                    </li>
+                    <li class="leaderboard-item">
+                        <span class="leaderboard-name">Trainer Gary</span>
+                        <span class="leaderboard-score">650</span>
+                    </li>
+                    <li class="leaderboard-item">
+                        <span class="leaderboard-name">Trainer May</span>
+                        <span class="leaderboard-score">590</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <a href="#" class="report-link">Report a Problem</a>
+    </footer>
+
+</body>
+</html>
