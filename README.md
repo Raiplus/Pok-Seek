@@ -66,7 +66,9 @@ Keep guessing correctly
 Climb the leaderboard with high scores!
 
 </details>
-
+---------
+- ## 🖥 Live Demo
+🔗 [Live Preview](https://raiplus.github.io/Pok-Seek/) 
 ---------
 🔮 Roadmap
 
