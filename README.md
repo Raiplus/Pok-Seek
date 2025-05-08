@@ -1,136 +1,77 @@
-# 🎮 PokéSeek - Pokémon Guessing Game
+# 🎮 PokéSeek - The Pokémon Guessing Game
 
-**PokéSeek** is a fun and interactive web game where you guess Pokémon from blurred images, built using [PokéAPI](https://pokeapi.co/).
-
----
-
-<details>
-<summary><b>✨ Features (Click to Expand)</b></summary>
-
-- 🎲 **Random Pokémon** — Generates Pokémon from all generations  
-- 🖼️ **Image Guessing** — Guess Pokémon from blurred sprites  
-- 📝 **Multiple Choice** — 4 smart answer options  
-- 📊 **Score System** — More points for quicker answers  
-- 🏆 **Leaderboard** — Global score tracking  
-- 📱 **Mobile Friendly** — Responsive design  
-
-</details>
+PokéSeek is a simple, fast-paced Pokémon image guessing game focused on the original 151 Generation I Pokémon. It's built using HTML, CSS, and vanilla JavaScript with dynamic scoring, hints, and a leaderboard UI.
 
 ---
 
-## 🚀 Getting Started
+## 🧠 How to Play
 
-<details>
-<summary><b>📥 Installation Steps</b></summary>
+1. Click **Start Game** to begin.
+2. A blurred Pokémon image appears.
+3. Choose the correct name from 4 options.
+4. Score increases for correct guesses and decreases for wrong ones.
+5. Try to beat your **High Score**!
 
-```bash
-# Clone the repository
-git clone https://github.com/Raiplus/PokéSeek.git && cd PokéSeek
+---
 
-# VS Code users
-code . && start index.html
+## 🛠️ Tech Stack
 
-# Or open in browser directly
-# Linux
-xdg-open index.html
-# macOS
-open index.html
-# Windows
-start index.html
-```
------
-</details>
-🎮 How to Play
+- **HTML** / **CSS** – UI and layout
+- **JavaScript** – Game logic, dynamic DOM updates
+- **PokéAPI** – Pokémon data
+- **LocalStorage** – High score tracking
 
-<details open> <summary><b>🎯 Game Flow</b></summary>
-  
-Click the Start Game button
+---
 
-A blurred Pokémon appears
+## 📦 Features
 
-Choose the correct name from the 4 options
+- 🔍 **Blurred Pokémon** guessing challenge  
+- ⏱️ **Bonus points** for fast answers (coming soon)  
+- 🔄 **Replayable** with dynamic options  
+- 💾 **High Score tracking** using `localStorage`  
+- 🧠 **Leaderboard** (UI only for now)  
+- 🎨 AI-assisted **UI/UX skeleton** designed using GenAI  
+- 📱 Mobile responsive design
 
-✅ If You Guess Right:
-You get '4' points 
+---
 
-The faster you guess, the more points you 
+## 📋 Upcoming Features
 
-Ther are some random bonous points for guessing fast upto 5 at a time 
+| Feature               | Status        |
+|-----------------------|----------------|
+| 🧩 Difficulty Levels    | 🟡 In Progress |
+| ✨ Shiny Pokémon Mode  | 🟢 Planned     |
+| 👥 Multiplayer         | 🔴 Future      |
 
-❌ If You Guess Wrong:
-You get '0' points 
+---
 
-🏆 Goal:
-Keep guessing correctly
+## 🖼️ Sneak Peek
 
-Climb the leaderboard with high scores!
+![PokéSeek Preview](https://via.placeholder.com/600x400)
 
-</details>
-  
-## 🖥 Live Demo
-🔗 [Live Preview](https://raiplus.github.io/Pok-Seek/) 
+---
 
----------
-🔮 Roadmap
+## 🔗 Live Demo
 
-<details> <summary><b>🌟 Upcoming Features</b></summary>
+**Coming Soon on GitHub Pages**
 
-| Feature            | Status         |
-| ------------------ | -------------- |
-| Difficulty Levels  | 🟡 In Progress |
-| Shiny Pokémon Mode | 🟢 Planned     |
-| Multiplayer        | 🔴 Future      |
-</details>
+---
 
----------------------------
-## 🏗️ Project Structure
+## 👨‍💻 Developer
 
-```
-PokéSeek/
-├── index.html            # Main HTML file
-├── assets/
-│   ├── images/           # Pokémon and UI images
-│   └── styles/           # CSS files
-└── js/
-    ├── game.js           # Game logic
-    ├── api.js            # PokéAPI integration
-    └── leaderboard.js    # Leaderboard logic
-```
+**Rishabh Singh Rajawat**  
+📧 [rishabhsinghrajawat.dev@gmail.com](mailto:rishabhsinghrajawat.dev@gmail.com)  
+🔗 [LinkedIn](https://www.linkedin.com/in/rishabh-singh-rajawat-5a1b782bb)  
+💻 [GitHub](https://github.com/Raiplus)
 
---------------------------------
+---
 
+## 🤖 Note on AI Usage
 
-🤝 Contributing
-<details> <summary><b>👨‍💻 Development Guide</b></summary>
-  
-```bash
-# Install live-server for development
+UI/UX skeleton was AI-assisted using design prompts, but **all JavaScript logic and game behavior were written manually** by the developer.
 
+---
 
-npm install -g live-server
+## 📄 License
 
-# Run on port 3000
-live-server --port=3000
-```
-Steps:
-🍴 Fork the repo
-
-🌿 Create branch → git checkout -b feature/your-feature
-
-💾 Commit → git commit -m "feat: your feature"
-
-🚀 Push → git push origin feature/your-feature
-
-🔄 Create a Pull Request
-
-</details>  
-
-------------
-
-📬 Contact
-
-| Platform    | Link                                                                                 |
-| ----------- | ------------------------------------------------------------------------------------ |
-| 📧 Email    | [rishabhsinghrajawat.dev@gmail.com](mailto:rishabhsinghrajawat.dev@gmail.com)        |
-| 💼 LinkedIn | [Rishabh Singh Rajawat](https://www.linkedin.com/in/rishabh-singh-rajawat-5a1b782bb) |
-| 💻 GitHub   | [Raiplus](https://github.com/Raiplus)                                                |
+MIT License – Free to use and modify.
