@@ -20,7 +20,7 @@
             </ul>
         </nav>
         <div class="header-right">
-            <div class="high-score">High Score: 0</div>
+            <div class="high-score"  >High Score: <samp id="High_score">0</samp></div>
             <a href="#" class="user-icon" title="Profile" style="display: none;">U</a>
         </div>
     </header>
@@ -29,8 +29,9 @@
         <div class="game-container">
             <button id="start_button" class="start-button">Start Game</button>
             <div class="pokemon-card">
-                <div class="pokemon-image"></div>
-                <div class="hint">Click "Start Game" to begin!</div>
+                <div class="pokemon-image" id="image_div"><img id="image" alt="Pokémon Image" />
+</div>
+                <div id="hint" class="hint">Click "Start Game" to begin!</div>
                 <div class="options">
                     <button id="Pokemon_NameBox1" class="option">Pokemon Name 1</button>
                     <button id="Pokemon_NameBox2" class="option">Pokemon Name 2</button>
@@ -42,7 +43,7 @@
         
         <div class="side-panel">
             <div class="current-score-panel">
-                <div class="score-title">Current Score</div>
+                <div class="score-title" id="Score">Current Score</div>
                 <div class="score-value">0</div>
             </div>
             

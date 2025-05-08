@@ -51,12 +51,14 @@ A blurred Pokémon appears
 Choose the correct name from the 4 options
 
 ✅ If You Guess Right:
-You get points +4
+You get '4' points 
 
-The faster you guess, the more points you earn
+The faster you guess, the more points you 
+
+Ther are some random bonous points for guessing fast upto 5 at a time 
 
 ❌ If You Guess Wrong:
-You get points -1
+You get '0' points 
 
 🏆 Goal:
 Keep guessing correctly
@@ -100,6 +102,7 @@ PokéSeek/
   
 ```bash
 # Install live-server for development
+
 
 npm install -g live-server
 
