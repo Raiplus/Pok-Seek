@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PokéSeek - Update Logs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #ff3e3e;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+            padding-left: 0;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        h2 {
+            color: #ff3e3e;
+            text-align: center;
+        }
+
+        ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+        }
+
+        a {
+            color: #ff3e3e;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .section-title {
+            color: #222;
+            margin-top: 2rem;
+        }
+
+        .meta {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">PokéSeek</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">← Back to Game</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>📝 Update Logs – Version 0.0.1</h2>
+        <div class="meta">
+            <p><strong>Release Date:</strong> 2025-05-09</p>
+            <p><strong>Developer:</strong> Rishabh Singh Rajawat (aka Raiplus)</p>
+        </div>
+
+        <h3 class="section-title">✅ Features Added</h3>
+        <ul>
+            <li>🎮 Core game logic for Pokémon guessing implemented.</li>
+            <li>🖼️ Image reveal on correct selection with unblur effect.</li>
+            <li>✅ Correct answer turns green, wrong turns red.</li>
+            <li>🧠 Scoring system integrated (+1 for correct guess).</li>
+            <li>⚡ Fast-guess bonus system (up to +5 points).</li>
+            <li>🔒 UI disabled after one guess to prevent spamming.</li>
+            <li>🔁 Play Again button state added.</li>
+            <li>📊 Score visible and updates in real-time.</li>
+        </ul>
+
+        <h3 class="section-title">⚠️ Known Issues</h3>
+        <ul>
+            <li>❗ Random score increases observed (possible double function calls).</li>
+
+            <li>❗ Multiple rapid clicks can still cause glitches.</li>
+        </ul>
+
+        <h3 class="section-title">💡 Upcoming Improvements</h3>
+        <ul>
+            <li>🔄 Debouncing score update functions.</li>
+            <li>🎯 Difficulty Levels (Easy/Hard)</li>
+
+            <li>📈 Expandable, live leaderboard integration.</li>
+            <li> 📝 Account Login & Save Progress</li>
+            <li>🧑‍🤝‍🧑 Multiplayer Battle Mode</li>
+            <li>🔊 Sound & animation feedback on guesses.</li>
+        </ul>
+    </main>
+
+    <footer>
+        PokéSeek &copy; 2025. Made with ❤️ by Rishabh Singh Rajawat. |
+        <a href="mailto:rishabhsinghrajawat.dev@gmail.com">Contact</a>
+    </footer>
+
+</body>
+
+</html>

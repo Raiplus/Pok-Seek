@@ -1,16 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
     let High_score
-    if(localStorage.getItem("High_score")){
-       High_score=localStorage.getItem("High_score")
-       let High_score_Value=document.getElementById("High_score")
-        
-        High_score_Value.innerText=High_score
+    if (localStorage.getItem("High_score")) {
+        High_score = localStorage.getItem("High_score")
+        let High_score_Value = document.getElementById("High_score")
+
+        High_score_Value.innerText = High_score
     }
-    else{
-         High_score=0// deflat 
+    else {
+        High_score = 0// deflat 
     }
-       
-        let score =0//defult
+
+    let score = 0//defult
     let start_button = document.getElementById("start_button")
     function getRandomPokemonId() {
         return Math.floor(Math.random() * 151) + 1; // Generates a number between 1 and 1000
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let Pokemon_NameBox3 = document.getElementById("Pokemon_NameBox3")
     let Pokemon_NameBox4 = document.getElementById("Pokemon_NameBox4")
     let hint = document.getElementById("hint")
-     let User_score= document.getElementById("Score")
+    let User_score = document.getElementById("Score")
 
 
     start_button.addEventListener("click", async () => {
@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let TempName2 = c[0]
         let TempName3 = c[1]
         let TempName4 = c[2]
-         console.log(TempName1)
+        console.log(TempName1)
 
 
         let [pokeName1, pokeName2, pokeName3, pokeName4] = await Pokemon_NameBox_random(TempName1, TempName2, TempName3, TempName4)
@@ -175,8 +175,8 @@ document.addEventListener("DOMContentLoaded", () => {
     //cheaking true or flse
 
     async function checking(pokeName, selectedName, index) {
-        selectedName=selectedName
-        
+        selectedName = selectedName
+
         const box = document.getElementById(`Pokemon_NameBox${index}`);
         start_button.style.backgroundColor = "#ffcc00";
         start_button.innerText = "Play Again"
@@ -189,10 +189,10 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log("Correct!", index);
             box.style.background = "lightgreen";
             scoreCounte()
-         
-              
+
+
         }
-         else {
+        else {
             console.log("Incorrect!", index);
             box.style.background = "#ff3e3e";
 
@@ -200,7 +200,7 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(() => {
             for (let i = 1; i <= 4; i++) {
                 const Option_box = document.getElementById(`Pokemon_NameBox${i}`);
-                if (Option_box.innerText== selectedName) {
+                if (Option_box.innerText == selectedName) {
                     Option_box.style.background = "lightgreen";
                 }
             }
@@ -223,26 +223,26 @@ document.addEventListener("DOMContentLoaded", () => {
     function OFFdisableAllOptions() {
         for (let i = 1; i <= 4; i++) {
             const box = document.getElementById(`Pokemon_NameBox${i}`);
-            box.style.pointerEvents = "auto" // enables clicking
+            box.style.pointerEvents = "auto"; // enables clicking
             box.style.opacity = "1"; //  normal opacity
 
         }
     }
     //score counter
     function scoreCounte() {
-        score=score+1
-        console.log(score,"fn called")
-        
+        score = score + 1
+        console.log(score, "fn called")
+
         User_score.innerText = score
 
-        if (score >High_score){
-            High_score=score
-        let High_score_Value=document.getElementById("High_score")
-        
-        High_score_Value.innerText=score
-        localStorage.setItem("High_score",High_score)
-       
+        if (score > High_score) {
+            High_score = score
+            let High_score_Value = document.getElementById("High_score")
+
+            High_score_Value.innerText = score
+            localStorage.setItem("High_score", High_score)
+
+        }
     }
-    }
- 
+
 })
