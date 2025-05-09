@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let score = 0//defult
     let start_button = document.getElementById("start_button")
     function getRandomPokemonId() {
-        return Math.floor(Math.random() * 151) + 1; // Generates a number between 1 and 1000
+        return Math.floor(Math.random() * 386) + 1; // Generates a number between 1 and 1000
     }
     let Pokemon_NameBox1 = document.getElementById("Pokemon_NameBox1")
     let Pokemon_NameBox2 = document.getElementById("Pokemon_NameBox2")
@@ -30,7 +30,12 @@ document.addEventListener("DOMContentLoaded", () => {
         OFFdisableAllOptions()
         //calling name changing fn
         await Pokemon_NameBox()
-        //[TempName1,TempName2,TempName3,TempName4]
+        //temporary decabling the btn  to avoide multiple cliks
+        start_button.style.pointerEvents = "none";
+        setTimeout(() => {
+            start_button.style.pointerEvents = "auto";
+            console.log("stop")
+        }, 3000)// Suspended for 3 seconds
         start_button.innerText = "Restart"
 
         start_button.style.backgroundColor = "#ff3e3e";
@@ -179,22 +184,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const box = document.getElementById(`Pokemon_NameBox${index}`);
         start_button.style.backgroundColor = "#ffcc00";
-        start_button.innerText = "Play Again"
+        start_button.innerText = "Next"
+
         const image_div = document.getElementById("image_div")
         image_div.style.filter = "none";
 
         image_div.style.opacity = "1";
         disableAllOptions()
         if (selectedName == pokeName) {
-            console.log("Correct!", index);
+
+            hint.innerText = `"Correct! 🎉 You guessed ${selectedName}!"`
+
             box.style.background = "lightgreen";
             scoreCounte()
 
 
         }
         else {
-            console.log("Incorrect!", index);
+
             box.style.background = "#ff3e3e";
+            hint.innerText = `"Wrong ❌ The correct answer was ${selectedName}!"`
 
         }
         setTimeout(() => {
