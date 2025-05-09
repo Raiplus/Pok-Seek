@@ -1,6 +1,6 @@
 # 🎮 PokéSeek - The Pokémon Guessing Game
 
-PokéSeek is a simple, fast-paced Pokémon image guessing game focused on the original 151 Generation I Pokémon. It's built using HTML, CSS, and vanilla JavaScript with dynamic scoring, hints, and a leaderboard UI.
+PokéSeek is a simple, fast-paced Pokémon image guessing game focused on the original 386 Generation I-III Pokémon. It's built using HTML, CSS, and vanilla JavaScript with dynamic scoring, hints, and a leaderboard UI.
 
 ---
 
