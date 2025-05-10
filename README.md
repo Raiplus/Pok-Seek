@@ -49,7 +49,8 @@ PokéSeek is a simple, fast-paced Pokémon image guessing game focused on the or
 
 ## 🖼️ Sneak Peek
 
-![image](https://github.com/user-attachments/assets/77f7b32d-ac46-41ff-bb60-af0876e98620)
+![image](https://github.com/user-attachments/assets/2e901088-5839-42f5-90a8-60ca0afdd6ea)
+
 
 
 ---
