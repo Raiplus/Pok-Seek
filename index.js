@@ -191,12 +191,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
         image_div.style.opacity = "1";
         disableAllOptions()
-        if (selectedName == pokeName) {
+        if (selectedName === pokeName) {
 
             hint.innerText = `"Correct! 🎉 You guessed ${selectedName}!"`
 
             box.style.background = "lightgreen";
-            scoreCounte()
+            setTimeout(() => {
+                scoreCounte()
+            }, 200)
+
 
 
         }
@@ -239,6 +242,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     //score counter
     function scoreCounte() {
+
         score = score + 1
         console.log(score, "fn called")
 

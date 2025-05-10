@@ -1,90 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>PokéSeek</title>
-        <link rel="stylesheet" href="style.css">
-        <script type="module" src="index.js"></script>
-    </head>
-    
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokéSeek | Guess That Pokémon!</title>
+    <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="index.js"></script>
+
+</head>
+
 <body>
     <header>
-        <div class="logo">PokéSeek</div>
+        <div class="logo">
+            <img src="poke.png" alt="PokéSeek Logo" class="logo-img">
+            <span>PokéSeek</span>
+        </div>
+
         <nav>
             <ul>
-                <li><a href="https://github.com/Raiplus/Pok-Seek/blob/main/README.md"> Home</a></li>
-                <li><a href="update-log.html"> Update Logs</a></li>
-                <li><a href="mailto:rishabhsinghrajawat.dev@gmail.com">Contact</a></li>
-                <li><a href="Leaderboard.html" class="leaderboard-header-icon" >Leaderboard</a></li>
+                <li><a href="https://github.com/Raiplus/Pok-Seek/blob/main/README.md"><i class="fas fa-home"></i>
+                        Home</a></li>
+                <li><a href="update-log.html"><i class="fas fa-clipboard-list"></i> Updates</a></li>
+                <li><a href="mailto:rishabhsinghrajawat.dev@gmail.com"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li><a href="Leaderboard.html"><i class="fas fa-trophy"></i> Leaderboard</a></li>
             </ul>
         </nav>
         <div class="header-right">
-            <div class="high-score"  >High Score: <samp id="High_score">0</samp></div>
-            <a href="#" class="user-icon" title="Profile" style="display: none;">U</a>
+            <div class="high-score tooltip">
+                <i class="fas fa-crown"></i>
+                <span>High Score: <samp id="High_score">0</samp></span>
+                <span class="tooltiptext">Your personal best!</span>
+            </div>
+            <a href="#" class="user-icon" title="Profile" style="display: none;">
+                <i class="fas fa-user"></i>
+            </a>
         </div>
     </header>
-    
+
     <main>
         <div class="game-container">
-            <button id="start_button" class="start-button">Start Game</button>
-            <div class="pokemon-card">
-                <div class="pokemon-image" id="image_div"><img id="image" alt="Pokémon Image" />
-</div>
-                <div id="hint" class="hint">Click "Start Game" to begin!</div>
+            <button id="start_button" class="start-button">
+                <i class="fas fa-play"></i> Start Game
+            </button>
+            <div class="pokemon-card fade-in">
+                <div class="pokemon-image" id="image_div">
+                    <img id="image" alt="Pokémon Image" />
+                </div>
+                <div id="hint" class="hint">Click "Start Game" to begin your Pokémon journey!</div>
                 <div class="options">
-                    <button id="Pokemon_NameBox1" class="option">Pokemon Name 1</button>
-                    <button id="Pokemon_NameBox2" class="option">Pokemon Name 2</button>
-                    <button id="Pokemon_NameBox3" class="option">Pokemon Name 3</button>
-                    <button id="Pokemon_NameBox4" class="option">Pokemon Name 4</button>
+                    <button id="Pokemon_NameBox1" class="option">Pokémon Name 1</button>
+                    <button id="Pokemon_NameBox2" class="option">Pokémon Name 2</button>
+                    <button id="Pokemon_NameBox3" class="option">Pokémon Name 3</button>
+                    <button id="Pokemon_NameBox4" class="option">Pokémon Name 4</button>
                 </div>
             </div>
         </div>
-        
+
         <div class="side-panel">
-            <div class="current-score-panel">
+            <div class="current-score-panel fade-in">
                 <div class="score-title" id="Score">Current Score</div>
                 <div class="score-value">0</div>
             </div>
-            
-            <div class="leaderboard-panel">
-                <h3 class="leaderboard-title">Leaderboard</h3>
+
+            <div class="leaderboard-panel fade-in">
+                <h3 class="leaderboard-title"><i class="fas fa-trophy"></i> Leaderboard</h3>
                 <ul class="leaderboard-list">
                     <li class="leaderboard-item">
-                        <span class="leaderboard-name">Trainer Rishabh</span>
+                        <span class="leaderboard-name"><i class="fas fa-medal" style="color: #ffd700;"></i> Trainer
+                            Rishabh</span>
                         <span class="leaderboard-score">999+</span>
                     </li>
                     <li class="leaderboard-item">
-                        <span class="leaderboard-name">Trainer Mokshraj</span>
+                        <span class="leaderboard-name"><i class="fas fa-medal" style="color: #c0c0c0;"></i> Trainer
+                            Mokshraj</span>
                         <span class="leaderboard-score">720</span>
                     </li>
                     <li class="leaderboard-item">
-                        <span class="leaderboard-name">Trainer Ashish</span>
+                        <span class="leaderboard-name"><i class="fas fa-medal" style="color: #cd7f32;"></i> Trainer
+                            Ashish</span>
                         <span class="leaderboard-score">680</span>
                     </li>
                     <li class="leaderboard-item">
-                        <span class="leaderboard-name">Trainer Raj</span>
-                        <span class="leaderboard-score">650</span>
+                        <span class="leaderboard-name"><i class="fas fa-star"></i> Trainer Raj</span>
+                        <span class="leaderboard-score">679</span>
                     </li>
                     <li class="leaderboard-item">
-                        <span class="leaderboard-name">Trainer Aman</span>
+                        <span class="leaderboard-name"><i class="fas fa-star"></i> Trainer Aman</span>
                         <span class="leaderboard-score">590</span>
                     </li>
-                    <div>We are working on this feature </div>
-                    <progress></progress>
                 </ul>
+                <div class="progress-container">
+                    <div>We are working on live leaderboards</div>
+                    <progress value="35" max="100"></progress>
+                </div>
             </div>
         </div>
     </main>
 
     <footer>
-        Note:- For early verson we are taking only 386 pokemons (Generation I-III)      
-        <br>
-        
-       
-        PokéSeek &copy; 2025. Made with ❤️ by Rishabh Singh Rajawat. |
-        <a href="mailto:rishabhsinghrajawat.dev@gmail.com" class="report-link">Report a Problem</a>
+        <p>
+            PokéSeek &copy; 2025. Made with <i class="fas fa-heart" style="color: #ff3e3e;"></i> by Rishabh Singh
+            Rajawat. |
+            <a href="mailto:rishabhsinghrajawat.dev@gmail.com" class="report-link">Report a Problem</a>
+        </p>
+        <p class="disclaimer">
+            Note: Early version includes Generation I-III Pokémon (386 total)
+        </p>
     </footer>
-
 </body>
+
 </html>
