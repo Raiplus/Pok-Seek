@@ -286,13 +286,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     //ErrorManagement
     function ErrorManagement() {
-    if (NotInternet >= 2) { // Check if error threshold is met
+    if (NotInternet >= 2) { 
         const errorMessageBox = document.getElementById("error-message");
-        errorMessageBox.style.display = "block"; // Show the error message box
+        errorMessageBox.style.display = "block"; 
         errorMessageBox.innerText = "No Internet Connection";
         
-        // Optional: Hide after a few seconds
-        setTimeout(() => {
+      setTimeout(() => {
             errorMessageBox.style.display = "none";
         }, 5000); // Hide after 5 seconds
 
