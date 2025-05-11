@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let Pokemon_NameBox4 = document.getElementById("Pokemon_NameBox4")
     let hint = document.getElementById("hint")
     let User_score = document.getElementById("Score")
+    let NotInternet = 0//defult no internet problem
 
 
     start_button.addEventListener("click", async () => {
@@ -34,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
         start_button.style.pointerEvents = "none";
         setTimeout(() => {
             start_button.style.pointerEvents = "auto";
-            console.log("stop")
+
         }, 3000)// Suspended for 3 seconds
         start_button.innerText = "Restart"
 
@@ -51,10 +52,24 @@ document.addEventListener("DOMContentLoaded", () => {
         for (let i = 0; i < 3; i++) {
             let PokemonId = getRandomPokemonId()
 
-            const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${PokemonId}`);
 
-            const data = await response.json();
-            arr.push(data.species.name)
+            try {
+                const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${PokemonId}`);
+                if (!response.ok) {
+                    
+                    
+                    throw new Error("Somthing went wrong")
+                }
+                const data = await response.json();
+                arr.push(data.species.name)
+            }
+            catch (err) {
+                console.log(err)
+                NotInternet = NotInternet+1
+
+            }
+
+
         }
 
         return arr;
@@ -64,10 +79,24 @@ document.addEventListener("DOMContentLoaded", () => {
         let arr = []
         let arr1 = []
         let PokemonId = getRandomPokemonId()
-        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${PokemonId}`);
+        let data
+
+        try {
+            const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${PokemonId}`);
+            if (!response.ok) {
+                NotInternet = NotInternet+1
+                ErrorManagement(NotInternet)
+                throw new Error("Somthing went wrong")
+            }
+            data = await response.json();
+        }
+        catch (err) {
+            console.log(err)
+
+        }
 
 
-        const data = await response.json();
+
         const image = document.getElementById("image")
         image.src = data.sprites.front_default
 
@@ -92,7 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
     //suffle
     async function Pokemon_NameBox_random(TempName1, TempName2, TempName3, TempName4) {
         let Random_number = Math.random()
-        console.log("i am hear")
+
         let a
         if (Random_number > 0.5) {
             a = TempName1
@@ -140,7 +169,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let TempName2 = c[0]
         let TempName3 = c[1]
         let TempName4 = c[2]
-        console.log(TempName1)
+
 
 
         let [pokeName1, pokeName2, pokeName3, pokeName4] = await Pokemon_NameBox_random(TempName1, TempName2, TempName3, TempName4)
@@ -150,9 +179,7 @@ document.addEventListener("DOMContentLoaded", () => {
         Pokemon_NameBox3.innerText = pokeName3
         Pokemon_NameBox4.innerText = pokeName4
         hint.innerText = `🕵️ Hint: This Pokémon's ability is "${ability[0]}" and it's a ${NameType[1]}${NameType[2] ? " & " + NameType[2] : ""} type Pokémon!`;
-        console.log(
-            pokeName1, pokeName2, pokeName3, pokeName4
-        )
+
         Pokemon_NameBox1.addEventListener('click', () => {
 
 
@@ -244,7 +271,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function scoreCounte() {
 
         score = score + 1
-        console.log(score, "fn called")
+
 
         User_score.innerText = score
 
@@ -257,5 +284,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }
     }
+    //ErrorManagement
+    function ErrorManagement() {
+    if (NotInternet >= 2) { // Check if error threshold is met
+        const errorMessageBox = document.getElementById("error-message");
+        errorMessageBox.style.display = "block"; // Show the error message box
+        errorMessageBox.innerText = "No Internet Connection";
+        
+        // Optional: Hide after a few seconds
+        setTimeout(() => {
+            errorMessageBox.style.display = "none";
+        }, 5000); // Hide after 5 seconds
+
+        NotInternet = 0; // Reset
+    }
+}
+
+
 
 })
