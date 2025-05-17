@@ -1,0 +1,25 @@
+{
+  "name": "pokeseek",
+  "version": "1.0.0",
+  "description": "PokéSeek is a simple, fast-paced Pokémon image guessing game focused on the original 386 Generation I Pokémon. It's built using HTML, CSS, and vanilla JavaScript with dynamic scoring, hints, and a leaderboard UI.\r =======\r PokéSeek is a simple, fast-paced Pokémon image guessing game focused on the original 386 Generation I-III Pokémon. It's built using HTML, CSS, and vanilla JavaScript with dynamic scoring, hints, and a leaderboard UI.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Raiplus/Pok-Seek.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Raiplus/Pok-Seek/issues"
+  },
+  "homepage": "https://github.com/Raiplus/Pok-Seek#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "mongoose": "^8.15.0"
+  }
+}
