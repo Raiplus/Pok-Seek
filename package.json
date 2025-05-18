@@ -13,12 +13,14 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/Raiplus/Pok-Seek/issues"
   },
   "homepage": "https://github.com/Raiplus/Pok-Seek#readme",
   "dependencies": {
+    "dotenv": "^16.5.0",
+    "ejs": "^3.1.10",
     "express": "^5.1.0",
     "mongoose": "^8.15.0"
   }

@@ -1,4 +1,44 @@
 document.addEventListener("DOMContentLoaded", () => {
+    let userName = ''
+
+    userName = localStorage.getItem('userName')
+    if (!userName) {
+        userName = prompt("Enter your traner name")
+
+        if (userName) {
+            confirm("Your traner name is ", userName)
+
+            NotuserName()
+        }
+        if (!userName) {
+            NotuserName()
+        }
+        else {
+            arr = ['`', '~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '=', '+', '-', '/', '}', '{', ']', '[', "'", '"', '?', ',', '>', '<', ';', ':']
+            for (let items of arr) {
+                for (let i in userName) {
+                    if (userName[i] == items) {
+                        alert('Invalid Characters')
+                        NotuserName()
+                    }
+                }
+            }
+        }
+        function NotuserName() {
+            userName = prompt("Enter your traner name")
+            confirm(`Your trainer name is "${userName}". Confirm?`)
+            if (!userName) {
+
+                NotuserName()
+            }
+
+        }
+        localStorage.setItem('userName', userName)
+
+    }
+
+
+
     let High_score
     if (localStorage.getItem("High_score")) {
         High_score = localStorage.getItem("High_score")
@@ -56,8 +96,8 @@ document.addEventListener("DOMContentLoaded", () => {
             try {
                 const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${PokemonId}`);
                 if (!response.ok) {
-                    
-                    
+
+
                     throw new Error("Somthing went wrong")
                 }
                 const data = await response.json();
@@ -65,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             catch (err) {
                 console.log(err)
-                NotInternet = NotInternet+1
+                NotInternet = NotInternet + 1
 
             }
 
@@ -84,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
         try {
             const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${PokemonId}`);
             if (!response.ok) {
-                NotInternet = NotInternet+1
+                NotInternet = NotInternet + 1
                 ErrorManagement(NotInternet)
                 throw new Error("Somthing went wrong")
             }
@@ -279,6 +319,30 @@ document.addEventListener("DOMContentLoaded", () => {
             High_score = score
             let High_score_Value = document.getElementById("High_score")
 
+
+            setTimeout(async () => {
+                try {
+                    const data = { userName: userName, score: High_score };
+                    console.log(data);
+
+                    let response = await fetch('/userscores', {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(data)
+                    });
+
+                    if (!response.ok) {
+                        throw new Error("Something went wrong");
+                    }
+                }
+
+                catch (err) {
+                    alert(err)
+                }
+            }, 100)
+
             High_score_Value.innerText = score
             localStorage.setItem("High_score", High_score)
 
@@ -286,18 +350,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     //ErrorManagement
     function ErrorManagement() {
-    if (NotInternet >= 2) { 
-        const errorMessageBox = document.getElementById("error-message");
-        errorMessageBox.style.display = "block"; 
-        errorMessageBox.innerText = "No Internet Connection";
-        
-      setTimeout(() => {
-            errorMessageBox.style.display = "none";
-        }, 5000); // Hide after 5 seconds
+        if (NotInternet >= 2) {
+            const errorMessageBox = document.getElementById("error-message");
+            errorMessageBox.style.display = "block";
+            errorMessageBox.innerText = "No Internet Connection";
 
-        NotInternet = 0; // Reset
+            setTimeout(() => {
+                errorMessageBox.style.display = "none";
+            }, 5000); // Hide after 5 seconds
+
+            NotInternet = 0; // Reset
+        }
     }
-}
 
 
 
