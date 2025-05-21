@@ -1,13 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
-    let userName = ''
+    let userName = ''// this is trmparory soon we are going to add user login/singup but for now we are trying to make a working leader bord it's last for 1 weak
 
     userName = localStorage.getItem('userName')
     if (!userName) {
         userName = prompt("Enter your traner name")
 
         if (userName) {
-            confirm("Your traner name is ", userName)
-
+           confirm(`Your trainer name is "${userName}". Confirm?`)
             NotuserName()
         }
         if (!userName) {
