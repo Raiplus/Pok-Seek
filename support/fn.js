@@ -32,36 +32,36 @@ const image = document.getElementById("image")
 image.src = data.sprites.front_default
 image.style.display = "block"
 
-    let High_score
-    if (localStorage.getItem("High_score")) {
-        High_score = localStorage.getItem("High_score")
-       
+let High_score
+if (localStorage.getItem("High_score")) {
+  High_score = localStorage.getItem("High_score")
 
-       let High_score_Value = document.getElementById("High_score")
-       
-        High_score_Value.innerText = High_score
-    }
-    else {
-        High_score = 0// deflat 
-    }
 
-    // geting in score board
-    if (last_Rank < score) {
-        ToLeader_Board()
-        
+  let High_score_Value = document.getElementById("High_score")
 
-    }
-     try {
-                let data = { name: userName, score: score };
-                let response = await fetch('/AmION10', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(data)
-                });
-                let resData = await response.json();
-                console.log(resData);
-            } catch (err) {
-                console.log(err);
-            }
+  High_score_Value.innerText = High_score
+}
+else {
+  High_score = 0// deflat 
+}
+
+// geting in score board
+if (last_Rank < score) {
+  ToLeader_Board()
+
+
+}
+try {
+  let data = { name: userName, score: score };
+  let response = await fetch('/AmION10', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data)
+  });
+  let resData = await response.json();
+  console.log(resData);
+} catch (err) {
+  console.log(err);
+}

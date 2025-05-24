@@ -24,13 +24,13 @@
     </header>
 
     <main>
-        
+
         <div class="page-header">
             <h1><i class="fas fa-clipboard-list"></i> Update Logs</h1>
             <p>Track the latest changes and improvements to PokéSeek</p>
         </div>
 
-        
+
         <div class="completion-banner">
             <h2><i class="fas fa-trophy"></i> Development Complete!</h2>
             <p>This version of PokéSeek is now feature-frozen as we begin work on the complete rebuild</p>
@@ -80,11 +80,11 @@
                     Codebase archived for reference
                 </li>
             </ul>
-            
+
             <div class="new-version-card">
                 <h3 class="section-title"><i class="fas fa-rocket"></i> PokéSeek 2.0 Announcement</h3>
                 <p>We're excited to announce the complete rebuild of PokéSeek with modern technologies!</p>
-                
+
                 <div class="version-comparison">
                     <div>
                         <h4><i class="fas fa-box"></i> Current Version (1.0)</h4>
@@ -108,7 +108,7 @@
                         </ul>
                     </div>
                 </div>
-                
+
                 <h3 class="section-title"><i class="fas fa-wrench"></i> New Technology Stack</h3>
                 <ul class="update-list">
                     <li class="feature">
@@ -135,8 +135,9 @@
             </div>
 
             <h3 class="section-title"><i class="fas fa-heart"></i> Thank You</h3>
-            <p>To all the players who tested PokéSeek and provided feedback - thank you! Your input is directly shaping the next version.</p>
-            
+            <p>To all the players who tested PokéSeek and provided feedback - thank you! Your input is directly shaping
+                the next version.</p>
+
             <div class="leaderboard-actions" style="justify-content: center; margin-top: 2rem;">
                 <a href="https://github.com/Raiplus/Pok-Seek" class="btn btn-primary" target="_blank">
                     <i class="fab fa-github"></i> View Project Archive
@@ -156,33 +157,46 @@
             <ul class="update-list">
                 <li class="feature">
                     <span class="tag tag-feature">Feature</span>
-                    <strong>Leaderboard fetching & display</strong>: Dynamically fetch and display leaderboard data from backend endpoint <code>/getdata</code>
+                    <strong>Leaderboard fetching & display</strong>: Dynamically fetch and display leaderboard data from
+                    backend endpoint <code>/getdata</code>
                 </li>
                 <li class="feature">
                     <span class="tag tag-feature">Feature</span>
-                    <strong>High score display & persistence</strong>: Load and display high score from <code>localStorage</code> with default value handling
-                </li>
-                <li class="feature">
-    <span class="tag tag-feature">Feature</span>
-    <strong>Filesystem Leaderboard Storage</strong>:
-    Server-side <code>fs</code> module used for:
-    <ul class="sub-features">
-        <li>Storing top 10 player rankings</li>
-        <li>Persisting last assigned player ID</li>
-    </ul>
-</li>
-                <li class="feature">
-                    <span class="tag tag-feature">Feature</span>
-                    <strong>Score submission</strong>: Submit player name and score to backend via <code>POST /AmION10</code> with validation
+                    <strong>High score display & persistence</strong>: Load and display high score from
+                    <code>localStorage</code> with default value handling
                 </li>
                 <li class="feature">
                     <span class="tag tag-feature">Feature</span>
-                    <strong>Toast notifications</strong>: Reusable toast system for success/error messages and user feedback
+                    <strong>Filesystem Leaderboard Storage</strong>:
+                    Server-side <code>fs</code> module used for:
+                    <ul class="sub-features">
+                        <li>Storing top 10 player rankings</li>
+                        <li>Persisting last assigned player
+                        <li class="feature">
+                            <span class="tag tag-feature">Feature</span>
+                            <strong>Client-Side Storage</strong>:
+                            <ul class="sub-features">
+                                <li><code>localStorage</code> for persistent high scores</li>
+                                <li><code>cookies</code> for session tracking and user preferences</li>
+                            </ul>
+                        </li>ID
                 </li>
-                <li class="feature">
-                    <span class="tag tag-feature">Feature</span>
-                    <strong>Share functionality</strong>: Web Share API integration to share high scores and leaderboard links
-                </li>
+            </ul>
+            </li>
+            <li class="feature">
+                <span class="tag tag-feature">Feature</span>
+                <strong>Score submission</strong>: Submit player name and score to backend via
+                <code>POST /AmION10</code> with validation
+            </li>
+            <li class="feature">
+                <span class="tag tag-feature">Feature</span>
+                <strong>Toast notifications</strong>: Reusable toast system for success/error messages and user feedback
+            </li>
+            <li class="feature">
+                <span class="tag tag-feature">Feature</span>
+                <strong>Share functionality</strong>: Web Share API integration to share high scores and leaderboard
+                links
+            </li>
             </ul>
 
             <h3 class="section-title"><i class="fas fa-bug"></i> Bug Fixes & Improvements</h3>
@@ -490,7 +504,7 @@
         PokéSeek &copy; 2025. Made with <i class="fas fa-heart" style="color: #ff3e3e;"></i> by Rishabh Singh Rajawat. |
         <a href="mailto:helpbyraiplus@gmail.com">Contact</a>
     </footer>
-    
+
 </body>
 
 </html>

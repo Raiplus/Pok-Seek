@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     userName = localStorage.getItem('userName')
     let score = 0//defult
     if (userName) {
+
         confirm(`Your trainer name is "${userName}". Confirm?`)
 
 
@@ -78,49 +79,50 @@ document.addEventListener("DOMContentLoaded", () => {
         High_score = 0// deflat 
     }
     //update leader board
-    Leaderboard() 
-async function Leaderboard() {
-    let arr=[]
-    
+    Leaderboard()
+    async function Leaderboard() {
+        let arr = []
 
-     try { let response = await fetch('/getdata')
-        if (!response.ok) {
-            throw new Error("404")
-        }
-        else {
-            let data = await response.json()
-            console.log(data)
-            arr.push(data)
-  
-            
 
-        }
-    } catch (error) {
-        console.error('Error fetching leaderboard:', error);
-        
-    }
+        try {
+            let response = await fetch('/getdata')
+            if (!response.ok) {
+                throw new Error("404")
+            }
+            else {
+                let data = await response.json()
+                console.log(data)
+                arr.push(data)
 
-    for (let i = 1; i < 6; i++) {
-        if (i == 1) {
-            document.getElementById(`Trainer${i}`).innerHTML = `<i class="fas fa-medal" style="color: #ffd700;"></i> ${arr[0].arr[i].name}`
-            document.getElementById(`Trainer_Score${i}`).innerHTML = `${arr[0].arr[i].score}`
-        }
-        else if (i == 2) {
-            document.getElementById(`Trainer${i}`).innerHTML = `<i class="fas fa-medal" style="color: #c0c0c0;"></i> ${arr[0].arr[i].name}`
-            document.getElementById(`Trainer_Score${i}`).innerHTML = `${arr[0].arr[i].score}`
-        }
-        else if (i == 3) {
-            document.getElementById(`Trainer${i}`).innerHTML = `<i class="fas fa-medal" style="color: #cd7f32;"></i> ${arr[0].arr[i].name}`
-            document.getElementById(`Trainer_Score${i}`).innerHTML = `${arr[0].arr[i].score}`
-        }
 
-        else {
-            document.getElementById(`Trainer${i}`).innerHTML = `<i class="fas fa-star"></i> ${arr[0].arr[i].name}`
-            document.getElementById(`Trainer_Score${i}`).innerHTML = `${arr[0].arr[i].score}`
+
+            }
+        } catch (error) {
+            console.error('Error fetching leaderboard:', error);
 
         }
 
-    }
+        for (let i = 1; i < 6; i++) {
+            if (i == 1) {
+                document.getElementById(`Trainer${i}`).innerHTML = `<i class="fas fa-medal" style="color: #ffd700;"></i> ${arr[0].arr[i].name}`
+                document.getElementById(`Trainer_Score${i}`).innerHTML = `${arr[0].arr[i].score}`
+            }
+            else if (i == 2) {
+                document.getElementById(`Trainer${i}`).innerHTML = `<i class="fas fa-medal" style="color: #c0c0c0;"></i> ${arr[0].arr[i].name}`
+                document.getElementById(`Trainer_Score${i}`).innerHTML = `${arr[0].arr[i].score}`
+            }
+            else if (i == 3) {
+                document.getElementById(`Trainer${i}`).innerHTML = `<i class="fas fa-medal" style="color: #cd7f32;"></i> ${arr[0].arr[i].name}`
+                document.getElementById(`Trainer_Score${i}`).innerHTML = `${arr[0].arr[i].score}`
+            }
+
+            else {
+                document.getElementById(`Trainer${i}`).innerHTML = `<i class="fas fa-star"></i> ${arr[0].arr[i].name}`
+                document.getElementById(`Trainer_Score${i}`).innerHTML = `${arr[0].arr[i].score}`
+
+            }
+
+        }
     }
 
     let start_button = document.getElementById("start_button")

@@ -9,18 +9,18 @@ const submitBtn = document.getElementById('submit-score-btn');
 const toastElement = document.getElementById('toast');
 //high_score
 
-    let High_score
-    if (localStorage.getItem("High_score")) {
-        High_score = localStorage.getItem("High_score")
-       
+let High_score
+if (localStorage.getItem("High_score")) {
+    High_score = localStorage.getItem("High_score")
 
-       let High_score_Value = document.getElementById("High_score")
-       
-        High_score_Value.innerText = High_score
-    }
-    else {
-        High_score = 0// deflat 
-    }
+
+    let High_score_Value = document.getElementById("High_score")
+
+    High_score_Value.innerText = High_score
+}
+else {
+    High_score = 0// deflat 
+}
 
 
 
@@ -115,9 +115,9 @@ async function submitScore(name, score) {
         }
     } finally {
         submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Score';
-        submitBtn.innerText="Submitted"
-        setTimeout(()=>{submitBtn.disabled = false;},4000)
-        setTimeout(()=>{fetchLeaderboard()},500)
+        submitBtn.innerText = "Submitted"
+        setTimeout(() => { submitBtn.disabled = false; }, 4000)
+        setTimeout(() => { fetchLeaderboard() }, 500)
     }
 }
 
@@ -126,7 +126,7 @@ async function shareContent() {
     let High_score
     if (localStorage.getItem("High_score")) {
         High_score = localStorage.getItem("High_score")
-       
+
     }
     else {
         High_score = 0// deflat 
