@@ -34,6 +34,7 @@
 | Data Storage     | Server-side FS    | File system module for caching Pokémon assets |
 | API Integration  | PokéAPI           | Fetching Pokémon metadata with local caching layer |
 | State Management | localStorage      | Client-side persistence for game progress |
+---
 [▶️ Play Now](https://raiplus.github.io/Pok-Seek/) | [📜 View Archive](https://github.com/Raiplus/Pok-Seek)
 
 ---
