@@ -35,7 +35,7 @@
 | API Integration  | PokéAPI           | Fetching Pokémon metadata with local caching layer |
 | State Management | localStorage      | Client-side persistence for game progress |
 ---
-## 🔗 [▶️ Play Now on Render](https://your-render-url.com)  
+## 🔗 [▶️ Play Now on Render](https://pok-seek.onrender.com)  
 ## 📂 [📜 View Source on GitHub](https://github.com/Raiplus/Pok-Seek)
 
 
