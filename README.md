@@ -1,81 +1,71 @@
-# 🎮 PokéSeek - The Pokémon Guessing Game
+# <img src="views/images/logo.png" alt="PokéSeek Logo" width="30" maga> PokéSeek - The Pokémon Guessing Game 
 
-PokéSeek is a simple, fast-paced Pokémon image guessing game focused on the original 386 Generation I Pokémon. It's built using HTML, CSS, and vanilla JavaScript with dynamic scoring, hints, and a leaderboard UI.
-=======
-PokéSeek is a simple, fast-paced Pokémon image guessing game focused on the original 386 Generation I-III Pokémon. It's built using HTML, CSS, and vanilla JavaScript with dynamic scoring, hints, and a leaderboard UI.
-
----
-
-## 🧠 How to Play
-
-1. Click **Start Game** to begin.
-2. A blurred Pokémon image appears.
-3. Choose the correct name from 4 options.
-4. Score increases for correct guesses and decreases for wrong ones.
-5. Try to beat your **High Score**!
+*Test your Pokémon knowledge...* 
+*Test your Pokémon knowledge with this polished guessing experience featuring Generation I-XI Pokémon!*
 
 ---
 
-## 🛠️ Tech Stack
+## 🌟 Final Version Highlights
 
-- **HTML** / **CSS** – UI and layout
-- **JavaScript** – Game logic, dynamic DOM updates
-- **PokéAPI** – Pokémon data
-- **LocalStorage** – High score tracking
-
----
-
-## 📦 Features
-
-- 🔍 **Blurred Pokémon** guessing challenge  
-- ⏱️ **Bonus points** for fast answers (coming soon)  
-- 🔄 **Replayable** with dynamic options  
-- 💾 **High Score tracking** using `localStorage`  
-- 🧠 **Leaderboard** (UI only for now)  
-- 🎨 AI-assisted **UI/UX skeleton** designed using GenAI  
-- 📱 Mobile responsive design
-
----
-
-## 📋 Upcoming Features
-
-| Feature               | Status        |
-|-----------------------|----------------|
-| 🧩 Difficulty Levels    | 🟡 In Progress |
-| ✨ Shiny Pokémon Mode  | 🟢 Planned     |
-| 👥 Multiplayer         | 🔴 Future      |
-
----
-
-## 🖼️ Sneak Peek
-
-![image](https://github.com/user-attachments/assets/2e901088-5839-42f5-90a8-60ca0afdd6ea)
+### 🏆 Completed Features
+- 🔍 **1025 Pokémon** from Generations I-XI
+- 🎯 **Smart multiple-choice** system with dynamic options
+- ⚡ **Real-time scoring** with speed bonuses
+- 📊 **Leaderboard** with MongoDB backend
+- 💾 **Persistent progress** using localStorage
+- 📱 **Mobile-optimized** responsive design
 
 
+
+## 🚀 How to Play
+
+1. **Start** the game and select your difficulty
+2. **Identify** the blurred Pokémon image
+3. **Choose** the correct name from options
+4. **Earn points** based on speed and accuracy
+5. **Compete** for top spots on the leaderboard
+## 🛠️ Technical Stack
+
+| Component         | Technology          | Implementation Details |
+|------------------|--------------------|------------------------|
+| Frontend         | Vanilla HTML/CSS/JS | Pure client-side rendering with dynamic DOM updates |
+| Backend          | Express.js         | REST API endpoints for game data and leaderboard |
+| Database         | MongoDB           | Remote Atlas cluster for persistent leaderboard storage |
+| Data Storage     | Server-side FS    | File system module for caching Pokémon assets |
+| API Integration  | PokéAPI           | Fetching Pokémon metadata with local caching layer |
+| State Management | localStorage      | Client-side persistence for game progress |
+[▶️ Play Now](https://raiplus.github.io/Pok-Seek/) | [📜 View Archive](https://github.com/Raiplus/Pok-Seek)
 
 ---
 
-## 🔗 Live Demo
+## 🏅 Project Achievements
 
-https://raiplus.github.io/Pok-Seek/
+- 🚀 Successfully launched with core gameplay
+- 📈 Served many players during testing
+- 🏆 Implemented functional leaderboard system
+- 💡 Collected valuable player feedback
 
 ---
 
-## 👨‍💻 Developer
+## 👨‍💻 About the Developer
 
 **Rishabh Singh Rajawat**  
-📧 [rishabhsinghrajawat.dev@gmail.com](mailto:rishabhsinghrajawat.dev@gmail.com)  
-🔗 [LinkedIn](https://www.linkedin.com/in/rishabh-singh-rajawat-5a1b782bb)  
-💻 [GitHub](https://github.com/Raiplus)
+Full-stack developer & Pokémon enthusiast  
+
+📧 [rishabhsinghrajawat.dev@gmail.com](mailto:helpbyraiplus@gmail.com)  
+💼 [LinkedIn](https://www.linkedin.com/in/rishabh-singh-rajawat-5a1b782bb)  
+🐙 [GitHub](https://github.com/Raiplus)  
 
 ---
 
-## 🤖 Note on AI Usage
+## ℹ️ Project Notes
 
-UI/UX skeleton was AI-assisted using design prompts, but **all JavaScript logic and game behavior were written manually** by the developer.
+- **Pure JavaScript**: All game logic manually coded
+- **UI Design**: Initial concepts AI-assisted, execution manual
+- **Open Source**: MIT Licensed - contributions welcome
+
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 ---
 
-## 📄 License
-
-MIT License – Free to use and modify.
+> *"This version represents the completed vision for PokéSeek 1.0. Thank you to all players who contributed feedback!"*

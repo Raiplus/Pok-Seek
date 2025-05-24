@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PokéSeek | Guess That Pokémon!</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="index.js"></script>
+    <script src="script/index.js"></script>
 
 </head>
 
@@ -65,40 +65,38 @@
 
         <div class="side-panel">
             <div class="current-score-panel fade-in">
-                <div class="score-title" id="Score">Current Score</div>
-                <div class="score-value">0</div>
+                <div class="score-title" >Current Score</div>
+                <div class="score-value " id="Score">0</div>
             </div>
 
             <div class="leaderboard-panel fade-in">
                 <h3 class="leaderboard-title"><i class="fas fa-trophy"></i> Leaderboard</h3>
                 <ul class="leaderboard-list">
                     <li class="leaderboard-item">
-                        <span class="leaderboard-name"><i class="fas fa-medal" style="color: #ffd700;"></i> Trainer
-                            Rishabh</span>
-                        <span class="leaderboard-score">999+</span>
+                        <span id="Trainer1" class="leaderboard-name"><i class="fas fa-medal" style="color: #ffd700;"></i> </span>
+                        <span  id="Trainer_Score1" class="leaderboard-score"></span>
                     </li>
                     <li class="leaderboard-item">
-                        <span class="leaderboard-name"><i class="fas fa-medal" style="color: #c0c0c0;"></i> Trainer
-                            Mokshraj</span>
-                        <span class="leaderboard-score">720</span>
+                        <span id="Trainer2" class="leaderboard-name"><i class="fas fa-medal" style="color: #c0c0c0;"></i> </span>
+                        <span  id="Trainer_Score2" class="leaderboard-score"></span>
                     </li>
                     <li class="leaderboard-item">
-                        <span class="leaderboard-name"><i class="fas fa-medal" style="color: #cd7f32;"></i> Trainer
-                            Ashish</span>
-                        <span class="leaderboard-score">680</span>
+                        <span id="Trainer3" class="leaderboard-name"><i class="fas fa-medal" style="color: #cd7f32;"></i> </span>
+                        <span id="Trainer_Score3"  class="leaderboard-score"></span>
                     </li>
                     <li class="leaderboard-item">
-                        <span class="leaderboard-name"><i class="fas fa-star"></i> Trainer Raj</span>
-                        <span class="leaderboard-score">679</span>
+                        <span id="Trainer4" class="leaderboard-name"><i class="fas fa-star"></i> </span>
+                        <span  id="Trainer_Score4" class="leaderboard-score"></span>
                     </li>
                     <li class="leaderboard-item">
-                        <span class="leaderboard-name"><i class="fas fa-star"></i> Trainer Aman</span>
-                        <span class="leaderboard-score">590</span>
+                        <span id="Trainer5" class="leaderboard-name"><i class="fas fa-star"></i> </span>
+                        <span id="Trainer_Score5"  class="leaderboard-score"></span>
                     </li>
                 </ul>
                 <div class="progress-container">
-                    <div>We are working on live leaderboards</div>
-                    <progress value="35" max="100"></progress>
+                    <div class="progress-label">🎉 You surpassed 80% of players!</div>
+                    <progress value="80" max="100"></progress>
+                     <span class="progress-value">🚀 Keep playing to rise up the leaderboard!</span>
                 </div>
             </div>
         </div>
@@ -111,7 +109,7 @@
             <a href="mailto:helpbyraiplus@gmail.com" class="report-link">Report a Problem</a>
         </p>
         <p class="disclaimer">
-            Note: Early version includes Generation I-III Pokémon (386 total)
+            Note: includes Generation I-XI Pokémon (1025 total)
         </p>
     </footer>
 </body>

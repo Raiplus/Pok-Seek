@@ -5,10 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leaderboard - PokéSeek</title>
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <link rel="stylesheet" href="Leaderboardstyle.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/Leaderboardstyle.css">
 </head>
 
 <body>
@@ -22,14 +20,16 @@
             <ul>
                 <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
                 <li><a href="update-log.html"><i class="fas fa-clipboard-list"></i> Updates</a></li>
-                <li><a href="mailto:rishabhsinghrajawat.dev@gmail.com"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li><a href="mailto:helpbyraiplus@gmail.com"><i class="fas fa-envelope"></i> Contact</a></li>
             </ul>
         </nav>
         <div class="header-right">
-            <div class="high-score">
+                <div class="high-score tooltip">
                 <i class="fas fa-crown"></i>
-                <span>High Score: <samp id="High_score">0</samp></span>
+                <span>High Score: <samp id="High_score">0</samp>
+                
             </div>
+           
         </div>
     </header>
 
@@ -37,41 +37,71 @@
         <div class="leaderboard-container">
             <h1 class="pulse">
                 <i class="fas fa-trophy"></i>
-                Leaderboard - Coming Soon!
+                PokéSeek Leaderboard
                 <i class="fas fa-trophy"></i>
             </h1>
 
-            <p>We're working hard to bring you an amazing leaderboard experience!</p>
-
-            <!-- Placeholder Image -->
-            <div class="leaderboard-image">
-                <img src="images/JpgLeaderboard.jpg" alt="Pokémon trainers competing">
+            <div class="leaderboard-table-container">
+                <table class="leaderboard-table">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Player</th>
+                            <th>Score</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboard-body">
+                        <!-- Leaderboard data will be inserted here by JavaScript -->
+                        <tr>
+                            <td colspan="4">Loading leaderboard...</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
-            <!-- Progress Bar -->
-            <div class="progress-bar-container">
-                <progress max="100" value="35"></progress>
-                <p class="progress-text">Development Progress: 35% complete</p>
+            <!-- Submit Score Form (hidden by default) -->
+            <div class="submit-score-form" id="submit-score-form" style="display: none;">
+                <h3><i class="fas fa-medal"></i> Submit Your Score</h3>
+                <div class="form-group">
+                    <label for="player-name">Your Name:</label>
+                    <input type="text" id="player-name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="player-score">Your Score:</label>
+                    <input type="number" id="player-score" placeholder="Enter your score" required>
+                </div>
+                <button class="btn btn-primary" id="submit-score-btn">
+                    <i class="fas fa-paper-plane"></i> Submit Score
+                </button>
+            </div>
+
+            <div class="leaderboard-actions">
+                <button class="btn btn-primary" id="refresh-leaderboard">
+                    <i class="fas fa-sync-alt"></i> Refresh
+                </button>
+                <button class="btn btn-secondary" id="share-score">
+                    <i class="fas fa-share-alt"></i> Share
+                </button>
+                <button class="btn btn-secondary" id="show-submit-form">
+                    <i class="fas fa-plus"></i> Submit Score
+                </button>
             </div>
 
             <div class="coming-soon-features">
-                <h3><i class="fas fa-star"></i> Planned Features:</h3>
+                <h3><i class="fas fa-star"></i> Coming Soon:</h3>
                 <ul>
-                    <li>Real-time global leaderboard rankings</li>
-                    <li>Personal stats and achievement badges</li>
                     <li>Weekly tournaments with special rewards</li>
                     <li>Friends leaderboard and challenges</li>
                     <li>Seasonal rankings with exclusive prizes</li>
+                    <li>Player profiles with achievement badges</li>
                 </ul>
             </div>
-
-            <div class="countdown">
-                Estimated launch: <span>December 2025</span>
-            </div>
-
-            <p>Thank you for your patience! We're excited to bring you this competitive feature soon.</p>
         </div>
     </main>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
 
     <footer>
         <p>
@@ -80,6 +110,7 @@
             <a href="mailto:helpbyraiplus@gmail.com">Contact</a>
         </p>
     </footer>
+    <script src="script/leaderBoard.js"></script>
 
 </body>
 
