@@ -43,7 +43,7 @@ async function fetchLeaderboard() {
         leaderboardBody.innerHTML = '<tr><td colspan="4">Loading leaderboard...</td></tr>';
         refreshBtn.innerHTML = '<div class="loading"></div> Refreshing';
         refreshBtn.disabled = true;
-        let response = await fetch('https://my-backend.onrender.com/getdata')
+        let response = await fetch('https://pok-seek.onrender.com/getdata')
         if (!response.ok) {
             throw new Error("404")
         }
@@ -101,7 +101,7 @@ async function submitScore(name, score) {
         submitBtn.disabled = true;
         try {
             let data = { name: name, score: score };
-            let response = await fetch('/AmION10', {
+            let response = await fetch('https://pok-seek.onrender.com/AmION10', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

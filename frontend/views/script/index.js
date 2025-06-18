@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         async function Rank() {
             try {
-                let response = await fetch('https://my-backend.onrender.com/', {
+                let response = await fetch('https://pok-seek.onrender.com/', {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         try {
-            let response = await fetch('https://my-backend.onrender.com/getdata')
+            let response = await fetch('https://pok-seek.onrender.com/getdata')
             if (!response.ok) {
                 throw new Error("404")
             }
@@ -410,7 +410,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     const data = { userName: userName, score: High_score };
                     console.log(data);
 
-                    let response = await fetch('https://my-backend.onrender.com/userscores', {
+                    let response = await fetch('https://pok-seek.onrender.com/userscores', {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json"
@@ -451,7 +451,7 @@ document.addEventListener("DOMContentLoaded", () => {
     async function ToLeader_Board() {
         try {
             let data = { name: userName, score: score };
-            let response = await fetch('https://my-backend.onrender.com/AmION10', {
+            let response = await fetch('https://pok-seek.onrender.com/AmION10', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
