@@ -58,7 +58,8 @@ app.get('/getdata', (req, res) => {
   for (let i = 0; i < 10; i++) {
     arr[i].rank = i + 1
   }
-  res.json({ arr })
+  res.json({ arr, message: "successfully" })
+
 
 })
 //
@@ -66,11 +67,12 @@ app.get('/getdata', (req, res) => {
 app.post('/', (req, res) => {
 
   res.json({ "last_Rank": last_Rank })
+
 })
 //
 app.post('/AmION10', async (req, res) => {
   let data = req.body
-
+ res.json({ message: "successfully" }); 
   top10(data)
   res.json({ "status": "ok" })
 
@@ -87,10 +89,12 @@ app.post('/userscores', async (req, res) => {
     try {
       const userDoc = await Users.findOneAndUpdate(
         { id: parsedId }, { score: req.body.score });
+        res.json({ message: "Score updated successfully" })
 
 
     } catch (err) {
       console.error("Error updating score:", err);
+        res.status(500).json({ error: "Failed to update score" });
     }
   }
 
