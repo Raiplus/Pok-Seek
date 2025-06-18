@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+   
     let userName = ''// this is trmparory soon we are going to add user login/singup but for now we are trying to make a working leader bord it's last for 1 weak
     let last_Rank = 0;
     userName = localStorage.getItem('userName')
@@ -10,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         async function Rank() {
             try {
-                let response = await fetch('/', {
+                let response = await fetch('https://my-backend.onrender.com/', {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
@@ -36,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     function NotuserName() {
-        userName = prompt("Enter your traner name")
+        userName = prompt("Enter your trainer name")
         confirm(`Your trainer name is "${userName}", Confirm?`)
         localStorage.setItem('userName', userName)
         if (!userName) {
@@ -47,8 +48,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         else {
             arr = ['`', '~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '=', '+', '-', '/', '}', '{', ']', '[', "'", '"', '?', ',', '>', '<', ';', ':']
-            for (let items of arr) {
-                for (let i in userName) {
+
+            for (let i in userName) {// this thing is user to run the loop till all itrations 
+                for (let items of arr) {// store indivual index as itms 
+
                     if (userName[i] == items) {
                         alert('Invalid Characters')
                         NotuserName()
@@ -56,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
 
-        }
+        }// for of and for in 
 
 
 
@@ -85,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         try {
-            let response = await fetch('/getdata')
+            let response = await fetch('https://my-backend.onrender.com/getdata')
             if (!response.ok) {
                 throw new Error("404")
             }
@@ -407,7 +410,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     const data = { userName: userName, score: High_score };
                     console.log(data);
 
-                    let response = await fetch('/userscores', {
+                    let response = await fetch('https://my-backend.onrender.com/userscores', {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json"
@@ -448,7 +451,7 @@ document.addEventListener("DOMContentLoaded", () => {
     async function ToLeader_Board() {
         try {
             let data = { name: userName, score: score };
-            let response = await fetch('/AmION10', {
+            let response = await fetch('https://my-backend.onrender.com/AmION10', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

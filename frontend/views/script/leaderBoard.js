@@ -43,7 +43,7 @@ async function fetchLeaderboard() {
         leaderboardBody.innerHTML = '<tr><td colspan="4">Loading leaderboard...</td></tr>';
         refreshBtn.innerHTML = '<div class="loading"></div> Refreshing';
         refreshBtn.disabled = true;
-        let response = await fetch('/getdata')
+        let response = await fetch('https://my-backend.onrender.com/getdata')
         if (!response.ok) {
             throw new Error("404")
         }

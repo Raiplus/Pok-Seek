@@ -6,10 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leaderboard - PokéSeek</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles/Leaderboardstyle.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rubik:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="/frontend/views/styles/Leaderboardstyle.css">
+ 
 </head>
 
 <body>
+    <!-- Floating PokéBalls -->
+    <div class="pokeball-decoration pokeball-1"></div>
+    <div class="pokeball-decoration pokeball-2"></div>
+    <div class="pokeball-decoration pokeball-3"></div>
 
     <header>
         <div class="logo">
@@ -26,10 +34,8 @@
         <div class="header-right">
             <div class="high-score tooltip">
                 <i class="fas fa-crown"></i>
-                <span>High Score: <samp id="High_score">0</samp>
-
+                <span>High Score: <samp id="High_score">0</samp></span>
             </div>
-
         </div>
     </header>
 
@@ -54,7 +60,11 @@
                     <tbody id="leaderboard-body">
                         <!-- Leaderboard data will be inserted here by JavaScript -->
                         <tr>
-                            <td colspan="4">Loading leaderboard...</td>
+                            <td colspan="4">
+                                <div class="loading-container">
+                                    <div class="loading"></div>
+                                </div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -101,17 +111,23 @@
     </main>
 
     <!-- Toast Notification -->
-    <div class="toast" id="toast"></div>
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <div class="toast-content">
+            <h4>Success!</h4>
+            <p>Your score has been submitted to the leaderboard.</p>
+        </div>
+    </div>
 
     <footer>
         <p>
-            PokéSeek &copy; 2025. Made with <i class="fas fa-heart" style="color: #ff3e3e;"></i> by Rishabh Singh
+            PokéSeek &copy; 2025. Made with <i class="fas fa-heart" style="color: var(--primary-red);"></i> by Rishabh
+            Singh
             Rajawat. |
             <a href="mailto:helpbyraiplus@gmail.com">Contact</a>
         </p>
     </footer>
     <script src="script/leaderBoard.js"></script>
-
 </body>
 
 </html>

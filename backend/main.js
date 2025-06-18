@@ -27,6 +27,7 @@ app.use(cookieParser());
 let last_Rank = 0
 
 let idNo = parseInt(fs.readFileSync("UserId.txt", "utf-8"));
+console.log("thsi is initaal", idNo)
 score_last()
 setInterval(() => {
   score_last()
@@ -93,11 +94,13 @@ app.post('/userscores', async (req, res) => {
       console.log(idNo)
       const user = new Users({ name: userName, score: score, id: idNo });
       await user.save();
+      console.log("user added", idNo)
       res.cookie("id", idNo);
       res.cookie("user", userName);
       res.cookie("score", score);
       idNo += 1
       fs.writeFileSync("UserId.txt", idNo.toString())
+
 
       res.json({ message: "User saved successfully!" });
     } catch (err) {
