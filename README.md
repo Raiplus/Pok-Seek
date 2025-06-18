@@ -73,7 +73,7 @@ We're excited to announce the complete rebuild of PokéSeek with modern technolo
 **Rishabh Singh Rajawat**  
 Full-stack developer & Pokémon enthusiast  
 
-📧 rishabhsinghrajawat.dev@gmail.com  
+📧 helpbyraiplus@gmail.com 
 💼 [LinkedIn](https://linkedin.com/in/yourprofile)  
 🐙 [GitHub](https://github.com/yourusername)  
 
