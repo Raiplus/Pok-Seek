@@ -5,6 +5,8 @@ import cookieParser from 'cookie-parser';
 import fs from 'fs'
 import moment from 'moment';
 import dotenv from 'dotenv';
+import cors from 'cors';
+app.use(cors());
 dotenv.config();
 
 const app = express();
