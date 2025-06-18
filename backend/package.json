@@ -18,12 +18,14 @@
     "url": "https://github.com/Raiplus/Pok-Seek/issues"
   },
   "homepage": "https://github.com/Raiplus/Pok-Seek#readme",
-  "dependencies": {
-    "cookie-parser": "^1.4.7",
-    "dotenv": "^16.5.0",
-    "ejs": "^3.1.10",
-    "express": "^5.1.0",
-    "moment": "^2.30.1",
-    "mongoose": "^8.15.0"
-  }
+ "dependencies": {
+  "cookie-parser": "^1.4.7",
+  "cors": "^2.8.5",
+  "dotenv": "^16.5.0",
+  "ejs": "^3.1.10",
+  "express": "^5.1.0",
+  "moment": "^2.30.1",
+  "mongoose": "^8.15.0"
+}
+
 }
