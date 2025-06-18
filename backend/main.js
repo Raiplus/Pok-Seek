@@ -6,10 +6,11 @@ import fs from 'fs'
 import moment from 'moment';
 import dotenv from 'dotenv';
 import cors from 'cors';
-app.use(cors());
+
 dotenv.config();
 
 const app = express();
+app.use(cors());
 const port = 3000;
 app.use(express.static('views'));
 
