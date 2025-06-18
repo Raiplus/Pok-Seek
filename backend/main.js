@@ -10,6 +10,9 @@ import cors from 'cors';
 dotenv.config();
 
 const app = express();
+app.use(express.json());
+
+
 app.use(cors());
 const port = 3000;
 app.use(express.static('views'));
@@ -23,7 +26,7 @@ mongoose.connect(process.env.MONGO_URI, {
 }).catch((err) => {
   console.error("MongoDB connection error:", err);
 });
-app.use(express.json());
+
 
 
 app.use(cookieParser());
