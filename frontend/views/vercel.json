@@ -1,7 +1,7 @@
 {
   "rewrites": [
-    { "source": "/update-log", "destination": "/update-log/index.html" },
-    { "source": "/leaderboard", "destination": "/leaderboard/index.html" },
+    { "source": "/update-log", "destination": "/update-log.html" },
+    { "source": "/leaderboard", "destination": "/Leaderboard.html" },
     { "source": "/Home", "destination": "/index.html" }
   ],
   "redirects": [
