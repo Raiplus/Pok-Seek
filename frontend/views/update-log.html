@@ -38,6 +38,111 @@
         </div>
 
         <div class="update-card">
+    <div class="version-header">
+        <h2 class="version-title"><i class="fas fa-bug"></i> Hotfix: Leaderboard Loading Issue</h2>
+        <div class="version-meta">
+            <div class="version-date">Released: 2025-07-12</div>
+            <div class="version-developer">Developer: Rishabh Singh Rajawat (Raiplus)</div>
+        </div>
+    </div>
+
+    <h3 class="section-title"><i class="fas fa-exclamation-triangle"></i> Issue Summary</h3>
+    <ul class="update-list">
+        <li class="bug">
+            <span class="tag tag-bug">Bug</span>
+            Backend server (Render-hosted) has cold start delays
+        </li>
+        <li class="bug">
+            <span class="tag tag-bug">Bug</span>
+            Blank/broken UI during initial load while waiting for response
+        </li>
+        <li class="bug">
+            <span class="tag tag-bug">Bug</span>
+            Poor user experience with no immediate feedback
+        </li>
+    </ul>
+
+    <h3 class="section-title"><i class="fas fa-wrench"></i> Implemented Solution</h3>
+    <ul class="update-list">
+        <li class="improvement">
+            <span class="tag tag-improvement">Improvement</span>
+            Added default static leaderboard data in frontend
+        </li>
+        <li class="improvement">
+            <span class="tag tag-improvement">Improvement</span>
+            Implemented smart polling mechanism:
+            <ul class="nested-list">
+                <li>Initial API request on page load</li>
+                <li>Fallback to static data if no response</li>
+                <li>Recurring checks every 2 minutes (max 8 attempts)</li>
+            </ul>
+        </li>
+        <li class="improvement">
+            <span class="tag tag-improvement">Improvement</span>
+            Automatic switch to live data when available
+        </li>
+    </ul>
+
+    <h3 class="section-title"><i class="fas fa-check-circle"></i> Outcome</h3>
+    <ul class="update-list">
+        <li class="feature">
+            <span class="tag tag-feature">UX Improvement</span>
+            Immediate visual feedback for users
+        </li>
+        <li class="feature">
+            <span class="tag tag-feature">Performance</span>
+            No more blank UI during backend warm-up
+        </li>
+        <li class="feature">
+            <span class="tag tag-feature">Reliability</span>
+            Graceful fallback and recovery system
+        </li>
+    </ul>
+
+    <div class="technical-details">
+        <h3 class="section-title"><i class="fas fa-code"></i> Technical Details</h3>
+        <pre><code>// Simplified implementation example
+function fetchLeaderboard() {
+    // Try live data first
+    fetch(API_ENDPOINT)
+        .then(showLiveData)
+        .catch(() => {
+            // Fallback to static data
+            showStaticData();
+            
+            // Start polling
+            const poll = setInterval(() => {
+                fetch(API_ENDPOINT)
+                    .then(data => {
+                        showLiveData(data);
+                        clearInterval(poll);
+                    })
+                    .catch(() => {});
+            }, 120000); // 2 minutes
+        });
+}</code></pre>
+    </div>
+
+    <h3 class="section-title"><i class="fas fa-lightbulb"></i> Future Considerations</h3>
+    <ul class="update-list">
+        <li class="upcoming">
+            <span class="tag tag-upcoming">Planned</span>
+            WebSocket implementation for real-time updates in v2.0
+        </li>
+        <li class="upcoming">
+            <span class="tag tag-upcoming">Planned</span>
+            Service Worker caching for offline support
+        </li>
+    </ul>
+
+    <div class="leaderboard-actions" style="justify-content: center; margin-top: 2rem;">
+        <a href="Leaderboard.html" class="btn btn-primary">
+            <i class="fas fa-sync-alt"></i> Test Leaderboard Loading
+        </a>
+    </div>
+</div>
+
+        <div class="update-card">
             <div class="version-header">
                 <h2 class="version-title"><i class="fas fa-check-circle"></i> Version 1.0 - Final Release</h2>
                 <div class="version-meta">
