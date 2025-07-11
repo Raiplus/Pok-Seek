@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-   
+
     let userName = ''// this is trmparory soon we are going to add user login/singup but for now we are trying to make a working leader bord it's last for 1 weak
     let last_Rank = 0;
     userName = localStorage.getItem('userName')
@@ -83,6 +83,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     //update leader board
     Leaderboard()
+    for (i = 0; i < 4; i++) {
+        setInterval(Leaderboard, 120000)
+    }
+
     async function Leaderboard() {
         let arr = []
 
@@ -102,7 +106,8 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         } catch (error) {
             console.error('Error fetching leaderboard:', error);
-
+            arr, push([{ "name": "Rishabh", "score": 9999, "date": "2025-05-19" }, { "name": "Raiplus", "score": 9999, "date": "2025-05-17" }, { "name": "Raj", "score": 9998, "date": "2025-05-23" }, { "name": "Gary Oak", "score": 8120, "date": "2025-05-14" }, { "name": "Dawn", "score": 7210, "date": "2025-05-22" }, { "name": "Mokshraj", "score": 5520, "date": "2025-05-20" }, { "name": "Dsha", "score": 4520, "date": "2025-05-18" }, { "name": "Amarjeet", "score": 1999, "date": "2025-05-24" }, { "name": "Hariom", "score": 1015, "date": "2025-05-31" }, { "name": "Ashu", "score": 1014, "date": "2025-05-31" } ])
+           
         }
 
         for (let i = 1; i < 6; i++) {

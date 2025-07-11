@@ -61,6 +61,7 @@ async function fetchLeaderboard() {
         console.error('Error fetching leaderboard:', error);
         leaderboardBody.innerHTML = '<tr><td colspan="4">Failed to load leaderboard. Please try again.</td></tr>';
         showToast('Failed to load leaderboard', 'error');
+        populateLeaderboard(            arr, push([{ "name": "Rishabh", "score": 9999, "date": "2025-05-19" }, { "name": "Raiplus", "score": 9999, "date": "2025-05-17" }, { "name": "Raj", "score": 9998, "date": "2025-05-23" }, { "name": "Gary Oak", "score": 8120, "date": "2025-05-14" }, { "name": "Dawn", "score": 7210, "date": "2025-05-22" }, { "name": "Mokshraj", "score": 5520, "date": "2025-05-20" }, { "name": "Dsha", "score": 4520, "date": "2025-05-18" }, { "name": "Amarjeet", "score": 1999, "date": "2025-05-24" }, { "name": "Hariom", "score": 1015, "date": "2025-05-31" }, { "name": "Ashu", "score": 1014, "date": "2025-05-31" } ]))
     }
 
 }
@@ -117,7 +118,7 @@ async function submitScore(name, score) {
         submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Score';
         submitBtn.innerText = "Submitted"
         setTimeout(() => { submitBtn.disabled = false; }, 4000)
-        setTimeout(() => { fetchLeaderboard() }, 500)
+        setTimeout(() => { fetchLeaderboard}, 500)
     }
 }
 
@@ -185,6 +186,9 @@ submitBtn.addEventListener('click', (e) => {
 // Initialize the leaderboard when the page loads
 document.addEventListener('DOMContentLoaded', () => {
     fetchLeaderboard();
+    for(i=0;i<8;i++){
+        setInterval(fetchLeaderboard,120000)
+    }
 
 
 });
