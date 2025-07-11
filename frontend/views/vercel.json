@@ -1,11 +1,12 @@
 {
   "rewrites": [
     { "source": "/update-log", "destination": "/update-log.html" },
-    { "source": "/leaderboard", "destination": "Leaderboard.html" },
+    { "source": "/leaderboard", "destination": "/Leaderboard.html" },
     { "source": "/", "destination": "/index.html" }
   ],
   "redirects": [
-    { "source": "/update-log", "destination": "/update-log", "permanent": true },
-    { "source": "/leaderboard", "destination": "/leaderboard", "permanent": true }
+    { "source": "/update-log.html", "destination": "/update-log", "permanent": true },
+    { "source": "/leaderboard.html", "destination": "/leaderboard", "permanent": true },
+     { "source": "/Home", "destination": "/" ,"permanent":true }
   ]
 }
