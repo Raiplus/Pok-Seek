@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
         { "name": "Raj", "score": 9998, "date": "2025-05-23" },
         { "name": "Ashu", "score": 8120, "date": "2025-05-14" },
         { "name": "Dk", "score": 7210, "date": "2025-05-22" }
-    ];
+    ]
     console.log('Using fallback leaderboard data due to error.');
         }
 
