@@ -200,7 +200,25 @@ submitBtn.addEventListener('click', (e) => {
 
 // Initialize the leaderboard when the page loads
 document.addEventListener('DOMContentLoaded', () => {
+
+
     fetchLeaderboard();
+    (()=>{
+         populateLeaderboard({
+            arr: [
+                { "name": "Rishabh", "score": 9999, "date": "2025-05-19", rank: 1 },
+                { "name": "Raiplus", "score": 9999, "date": "2025-05-17", rank: 2 },
+                { "name": "Raj", "score": 9998, "date": "2025-05-23", rank: 3 },
+                { "name": "Ashu", "score": 8120, "date": "2025-05-14", rank: 4 },
+                { "name": "Dks", "score": 7210, "date": "2025-05-22", rank: 5 },
+                { "name": "Hariom", "score": 6210, "date": "2025-05-22", rank: 6 },
+                { "name": "abishak", "score": 5210, "date": "2025-05-22", rank: 7 },
+                { "name": "ahsu5", "score": 4210, "date": "2025-05-22", rank: 8 },
+                { "name": "Raj3", "score": 3210, "date": "2025-05-22", rank: 9 },
+                { "name": "Dawn", "score": 2210, "date": "2025-05-22", rank: 10 }
+            ]
+        });
+    })()
     setInterval(fetchLeaderboard, 120000);  // ek hi baar interval lagao
 });
 

@@ -80,11 +80,46 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     else {
         High_score = 0// deflat 
-    }
+    }// leader bord falback fix 
+
+    (() => {
+
+        arr = [
+            { "name": "Rishabh", "score": 9999, "date": "2025-05-19" },
+            { "name": "Raiplus", "score": 9999, "date": "2025-05-17" },
+            { "name": "Raj", "score": 9998, "date": "2025-05-23" },
+            { "name": "Ashu", "score": 8120, "date": "2025-05-14" },
+            { "name": "Dk", "score": 7210, "date": "2025-05-22" }
+        ]
+        for (let i = 0; i < 5; i++) {
+            if (i == 0) {
+                document.getElementById(`Trainer${i}`).innerHTML = `<i class="fas fa-medal" style="color: #ffd700;"></i> ${arr[i].name}`
+                document.getElementById(`Trainer_Score${i}`).innerHTML = `${arr[i].score}`
+            }
+            else if (i == 1) {
+                document.getElementById(`Trainer${i}`).innerHTML = `<i class="fas fa-medal" style="color: #c0c0c0;"></i> ${arr[i].name}`
+                document.getElementById(`Trainer_Score${i}`).innerHTML = `${arr[i].score}`
+            }
+            else if (i == 2) {
+                document.getElementById(`Trainer${i}`).innerHTML = `<i class="fas fa-medal" style="color: #cd7f32;"></i> ${arr[i].name}`
+                document.getElementById(`Trainer_Score${i}`).innerHTML = `${arr[i].score}`
+            }
+
+            else {
+                document.getElementById(`Trainer${i}`).innerHTML = `<i class="fas fa-star"></i> ${arr[i].name}`
+                document.getElementById(`Trainer_Score${i}`).innerHTML = `${arr[i].score}`
+
+            }
+
+        }
+        Leaderboard()//update leader board
+
+    })()
+
     //update leader board
-    Leaderboard()
+
     for (let i = 0; i < 4; i++) {
-        setInterval(Leaderboard, 120000)
+        setInterval(Leaderboard, 12000)
     }
 
     async function Leaderboard() {
@@ -99,20 +134,20 @@ document.addEventListener("DOMContentLoaded", () => {
             else {
                 let data = await response.json()
                 console.log(data)
-                arr=data.arr
+                arr = data.arr
 
             }
         } catch (error) {
-    console.error('Error fetching leaderboard:', error);
-   
-    arr = [
-        { "name": "Rishabh", "score": 9999, "date": "2025-05-19" },
-        { "name": "Raiplus", "score": 9999, "date": "2025-05-17" },
-        { "name": "Raj", "score": 9998, "date": "2025-05-23" },
-        { "name": "Ashu", "score": 8120, "date": "2025-05-14" },
-        { "name": "Dk", "score": 7210, "date": "2025-05-22" }
-    ]
-    console.log('Using fallback leaderboard data due to error.');
+            console.error('Error fetching leaderboard:', error);
+
+            arr = [
+                { "name": "Rishabh", "score": 9999, "date": "2025-05-19" },
+                { "name": "Raiplus", "score": 9999, "date": "2025-05-17" },
+                { "name": "Raj", "score": 9998, "date": "2025-05-23" },
+                { "name": "Ashu", "score": 8120, "date": "2025-05-14" },
+                { "name": "Dk", "score": 7210, "date": "2025-05-22" }
+            ]
+            console.log('Using fallback leaderboard data due to error.');
         }
 
         for (let i = 0; i < 5; i++) {
