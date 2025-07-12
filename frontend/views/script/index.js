@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     //update leader board
     Leaderboard()
-    for (i = 0; i < 4; i++) {
+    for (let i = 0; i < 4; i++) {
         setInterval(Leaderboard, 120000)
     }
 
@@ -99,34 +99,39 @@ document.addEventListener("DOMContentLoaded", () => {
             else {
                 let data = await response.json()
                 console.log(data)
-                arr.push(data)
-
-
+                arr=data.arr
 
             }
         } catch (error) {
-            console.error('Error fetching leaderboard:', error);
-            arr, push([{ "name": "Rishabh", "score": 9999, "date": "2025-05-19" }, { "name": "Raiplus", "score": 9999, "date": "2025-05-17" }, { "name": "Raj", "score": 9998, "date": "2025-05-23" }, { "name": "Gary Oak", "score": 8120, "date": "2025-05-14" }, { "name": "Dawn", "score": 7210, "date": "2025-05-22" }, { "name": "Mokshraj", "score": 5520, "date": "2025-05-20" }, { "name": "Dsha", "score": 4520, "date": "2025-05-18" }, { "name": "Amarjeet", "score": 1999, "date": "2025-05-24" }, { "name": "Hariom", "score": 1015, "date": "2025-05-31" }, { "name": "Ashu", "score": 1014, "date": "2025-05-31" } ])
-           
+    console.error('Error fetching leaderboard:', error);
+   
+    arr = [
+        { "name": "Rishabh", "score": 9999, "date": "2025-05-19" },
+        { "name": "Raiplus", "score": 9999, "date": "2025-05-17" },
+        { "name": "Raj", "score": 9998, "date": "2025-05-23" },
+        { "name": "Ashu", "score": 8120, "date": "2025-05-14" },
+        { "name": "Dk", "score": 7210, "date": "2025-05-22" }
+    ];
+    console.log('Using fallback leaderboard data due to error.');
         }
 
-        for (let i = 1; i < 6; i++) {
-            if (i == 1) {
-                document.getElementById(`Trainer${i}`).innerHTML = `<i class="fas fa-medal" style="color: #ffd700;"></i> ${arr[0].arr[i].name}`
-                document.getElementById(`Trainer_Score${i}`).innerHTML = `${arr[0].arr[i].score}`
+        for (let i = 0; i < 5; i++) {
+            if (i == 0) {
+                document.getElementById(`Trainer${i}`).innerHTML = `<i class="fas fa-medal" style="color: #ffd700;"></i> ${arr[i].name}`
+                document.getElementById(`Trainer_Score${i}`).innerHTML = `${arr[i].score}`
+            }
+            else if (i == 1) {
+                document.getElementById(`Trainer${i}`).innerHTML = `<i class="fas fa-medal" style="color: #c0c0c0;"></i> ${arr[i].name}`
+                document.getElementById(`Trainer_Score${i}`).innerHTML = `${arr[i].score}`
             }
             else if (i == 2) {
-                document.getElementById(`Trainer${i}`).innerHTML = `<i class="fas fa-medal" style="color: #c0c0c0;"></i> ${arr[0].arr[i].name}`
-                document.getElementById(`Trainer_Score${i}`).innerHTML = `${arr[0].arr[i].score}`
-            }
-            else if (i == 3) {
-                document.getElementById(`Trainer${i}`).innerHTML = `<i class="fas fa-medal" style="color: #cd7f32;"></i> ${arr[0].arr[i].name}`
-                document.getElementById(`Trainer_Score${i}`).innerHTML = `${arr[0].arr[i].score}`
+                document.getElementById(`Trainer${i}`).innerHTML = `<i class="fas fa-medal" style="color: #cd7f32;"></i> ${arr[i].name}`
+                document.getElementById(`Trainer_Score${i}`).innerHTML = `${arr[i].score}`
             }
 
             else {
-                document.getElementById(`Trainer${i}`).innerHTML = `<i class="fas fa-star"></i> ${arr[0].arr[i].name}`
-                document.getElementById(`Trainer_Score${i}`).innerHTML = `${arr[0].arr[i].score}`
+                document.getElementById(`Trainer${i}`).innerHTML = `<i class="fas fa-star"></i> ${arr[i].name}`
+                document.getElementById(`Trainer_Score${i}`).innerHTML = `${arr[i].score}`
 
             }
 

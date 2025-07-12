@@ -39,36 +39,51 @@ function showToast(message, type = 'success', duration = 3000) {
 // Function to fetch leaderboard data from backend
 async function fetchLeaderboard() {
     try {
-
         leaderboardBody.innerHTML = '<tr><td colspan="4">Loading leaderboard...</td></tr>';
         refreshBtn.innerHTML = '<div class="loading"></div> Refreshing';
         refreshBtn.disabled = true;
-        let response = await fetch('https://pok-seek.onrender.com/getdata')
+        let response = await fetch('https://pok-seek.onrender.com/getdata');
         if (!response.ok) {
-            throw new Error("404")
+            throw new Error("404");
         }
-        else {
-            let data = await response.json()
-            console.log(data)
-            const Data = data
+        let data = await response.json();
+        console.log(data);
 
-
-
-            populateLeaderboard(Data);
-            showToast('Leaderboard updated!');
-        }
+        populateLeaderboard(data);
+        showToast('Leaderboard updated!');
     } catch (error) {
         console.error('Error fetching leaderboard:', error);
         leaderboardBody.innerHTML = '<tr><td colspan="4">Failed to load leaderboard. Please try again.</td></tr>';
         showToast('Failed to load leaderboard', 'error');
-        populateLeaderboard(            arr, push([{ "name": "Rishabh", "score": 9999, "date": "2025-05-19" }, { "name": "Raiplus", "score": 9999, "date": "2025-05-17" }, { "name": "Raj", "score": 9998, "date": "2025-05-23" }, { "name": "Gary Oak", "score": 8120, "date": "2025-05-14" }, { "name": "Dawn", "score": 7210, "date": "2025-05-22" }, { "name": "Mokshraj", "score": 5520, "date": "2025-05-20" }, { "name": "Dsha", "score": 4520, "date": "2025-05-18" }, { "name": "Amarjeet", "score": 1999, "date": "2025-05-24" }, { "name": "Hariom", "score": 1015, "date": "2025-05-31" }, { "name": "Ashu", "score": 1014, "date": "2025-05-31" } ]))
-    }
 
+        populateLeaderboard({
+            arr: [
+                { "name": "Rishabh", "score": 9999, "date": "2025-05-19", rank: 1 },
+                { "name": "Raiplus", "score": 9999, "date": "2025-05-17", rank: 2 },
+                { "name": "Raj", "score": 9998, "date": "2025-05-23", rank: 3 },
+                { "name": "Ashu", "score": 8120, "date": "2025-05-14", rank: 4 },
+                { "name": "Dks", "score": 7210, "date": "2025-05-22", rank: 5 },
+                { "name": "Hariom", "score": 6210, "date": "2025-05-22", rank: 6 },
+                { "name": "abishak", "score": 5210, "date": "2025-05-22", rank: 7 },
+                { "name": "ahsu5", "score": 4210, "date": "2025-05-22", rank: 8 },
+                { "name": "Raj3", "score": 3210, "date": "2025-05-22", rank: 9 },
+                { "name": "Dawn", "score": 2210, "date": "2025-05-22", rank: 10 }
+            ]
+        });
+
+        console.log('Using fallback data');
+    } finally {
+        refreshBtn.innerHTML = 'Refresh';
+        refreshBtn.disabled = false;
+    }
 }
+
+
 
 // Function to populate the leaderboard with data
 function populateLeaderboard(data) {
     leaderboardBody.innerHTML = '';
+
 
     if (data.arr.length === 0) {
         leaderboardBody.innerHTML = '<tr><td colspan="4">No scores yet. Be the first to submit!</td></tr>';
@@ -118,7 +133,7 @@ async function submitScore(name, score) {
         submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Score';
         submitBtn.innerText = "Submitted"
         setTimeout(() => { submitBtn.disabled = false; }, 4000)
-        setTimeout(() => { fetchLeaderboard}, 500)
+        setTimeout(() => { fetchLeaderboard() }, 500)
     }
 }
 
@@ -186,11 +201,8 @@ submitBtn.addEventListener('click', (e) => {
 // Initialize the leaderboard when the page loads
 document.addEventListener('DOMContentLoaded', () => {
     fetchLeaderboard();
-    for(i=0;i<8;i++){
-        setInterval(fetchLeaderboard,120000)
-    }
-
-
+    setInterval(fetchLeaderboard, 120000);  // ek hi baar interval lagao
 });
+
 
 
