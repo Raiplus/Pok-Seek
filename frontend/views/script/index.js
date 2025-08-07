@@ -511,6 +511,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     }
+            // this is uded to start all Render based web app to give a smooth or semeless effect 
+        (async () => {
+            try {
+                let API1 = await fetch('https://auth-user-dashboard.onrender.com/')
+                let API2 = await fetch('https://pok-seek.onrender.com/getdata')
+                let API3 = await fetch('https://contact-us-7kco.onrender.com/')
+                throw new Error('network error')
+            }
+            catch (Err) {
+                let API1 = await fetch('https://auth-user-dashboard.onrender.com/')
+                let API2 = await fetch('https://pok-seek.onrender.com/getdata')
+                let API3 = await fetch('https://contact-us-7kco.onrender.com/')
+            }
+        })()
 
 
 })
